@@ -1,0 +1,20 @@
+{% extends "main/index.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<a href="/allUser">
+    <button style="margin-left:90%;color:white;font-weight:bold" class="btn btn-info">
+        View User
+    </button>
+</a>
+<form action="/main" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+
+    <button style="margin-top:20px"  class="btn btn-success">Submit</button>
+    <br/><br/>
+</form>
+
+
+{% endblock content %}

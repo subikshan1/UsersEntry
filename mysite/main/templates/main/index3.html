@@ -1,0 +1,49 @@
+{% extends "main/index.html" %}
+
+
+{% block content %}
+
+{% if Valid %}
+<div class="popup center">
+  <div class="icon">
+    <i class="fa fa-check"></i>
+  </div>
+  <div class="title">
+    {{Response}}
+  </div>
+  <div class="description">
+    {{Reason}}
+  </div>
+  <div class="dismiss-btn">
+    <a href="/main">
+      <button id="dismiss-popup-btn">
+      Dismiss
+    </button>
+    </a>
+  </div>
+</div>
+
+
+{% else %}
+<div class="popup center">
+  <div style="border-color:red" class="icon">
+    <i style="color:red" class="fa fa-times"></i>
+  </div>
+  <div class="title">
+    {{Response}}
+  </div>
+  <div class="description">
+    {{Reason}}
+  </div>
+  <div class="dismiss-btn">
+    <a href="/main">
+      <button id="dismiss-popup-btn">
+      Dismiss
+    </button>
+    </a>
+  </div>
+</div>
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,40 @@
+{% extends "main/index.html" %}
+
+
+{% block content %}
+{%csrf_token%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">DOB</th>
+      <th scope="col">Gender</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Nation</th>
+      <th scope="col">PanNum</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for datas in data %}
+    <tr>
+      <th scope="row">{{datas.id}}</th>
+      <td>{{datas.FirstName}}</td>
+       <td>{{datas.LastName}}</td>
+       <td>{{datas.DOB}}</td>
+       <td>{{datas.Gender}}</td>
+       <td>{{datas.City}}</td>
+       <td>{{datas.State}}</td>
+       <td>{{datas.National}}</td>
+       <td>{{datas.PanNum}}</td>
+    </tr>
+  {%  endfor %}
+  </tbody>
+</table>
+<a href="/main">
+  <button style="color:white" class="btn btn-primary">Add User</button>
+</a>
+
+{% endblock content %}
