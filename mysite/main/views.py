@@ -91,7 +91,8 @@ def gender_data(gender):
     # pylint: disable=consider-using-in
     if gender == 'Male' or gender == 'Female':
         gender_list.append(gender)
-    gender_list = gender_list.append("Not a Valid") if gender_list == [] else gender_list
+    else:
+        gender_list.append("Not a Valid") if gender_list == [] else gender_list
     return gender_list[0]
 
 
